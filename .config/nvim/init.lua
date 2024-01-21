@@ -153,23 +153,12 @@ require('lazy').setup({
   },
 
   {
-    -- Themes
-    --'navarasu/onedark.nvim',
-    'luisiacc/gruvbox-baby',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'gruvbox-baby'
-    end,
-  },
-
-  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox-baby',
         component_separators = '|',
         section_separators = '',
       },
@@ -294,6 +283,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -523,7 +514,6 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-  java_language_server = {},
 
   lua_ls = {
     Lua = {

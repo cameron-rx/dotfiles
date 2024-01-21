@@ -1,142 +1,7 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
-# The definition of color schemes.
-schemes:
-  gruvbox_material_hard_dark: &gruvbox_material_hard_dark
-    primary:
-      background: '0x1d2021'
-      foreground: '0xd4be98'
-    normal:
-      black:   '0x32302f'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
-    bright:
-      black:   '0x32302f'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
-  gruvbox_material_medium_dark: &gruvbox_material_medium_dark
-    primary:
-      background: '0x282828'
-      foreground: '0xd4be98'
-    normal:
-      black:   '0x3c3836'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
-    bright:
-      black:   '0x3c3836'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
-  gruvbox_material_soft_dark: &gruvbox_material_soft_dark
-    primary:
-      background: '0x32302f'
-      foreground: '0xd4be98'
-    normal:
-      black:   '0x45403d'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
-    bright:
-      black:   '0x45403d'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
-  gruvbox_material_hard_light: &gruvbox_material_hard_light
-    primary:
-      background: '0xf9f5d7'
-      foreground: '0x654735'
-    normal:
-      black:   '0x654735'
-      red:     '0xc14a4a'
-      green:   '0x6c782e'
-      yellow:  '0xb47109'
-      blue:    '0x45707a'
-      magenta: '0x945e80'
-      cyan:    '0x4c7a5d'
-      white:   '0xf2e5bc'
-    bright:
-      black:   '0x654735'
-      red:     '0xc14a4a'
-      green:   '0x6c782e'
-      yellow:  '0xb47109'
-      blue:    '0x45707a'
-      magenta: '0x945e80'
-      cyan:    '0x4c7a5d'
-      white:   '0xf2e5bc'
-  gruvbox_material_medium_light: &gruvbox_material_medium_light
-    primary:
-      background: '0xfbf1c7'
-      foreground: '0x654735'
-    normal:
-      black:   '0x654735'
-      red:     '0xc14a4a'
-      green:   '0x6c782e'
-      yellow:  '0xb47109'
-      blue:    '0x45707a'
-      magenta: '0x945e80'
-      cyan:    '0x4c7a5d'
-      white:   '0xeee0b7'
-    bright:
-      black:   '0x654735'
-      red:     '0xc14a4a'
-      green:   '0x6c782e'
-      yellow:  '0xb47109'
-      blue:    '0x45707a'
-      magenta: '0x945e80'
-      cyan:    '0x4c7a5d'
-      white:   '0xeee0b7'
-  gruvbox_material_soft_light: &gruvbox_material_soft_light
-    primary:
-      background: '0xf2e5bc'
-      foreground: '0x654735'
-    normal:
-      black:   '0x654735'
-      red:     '0xc14a4a'
-      green:   '0x6c782e'
-      yellow:  '0xb47109'
-      blue:    '0x45707a'
-      magenta: '0x945e80'
-      cyan:    '0x4c7a5d'
-      white:   '0xe6d5ae'
-    bright:
-      black:   '0x654735'
-      red:     '0xc14a4a'
-      green:   '0x6c782e'
-      yellow:  '0xb47109'
-      blue:    '0x45707a'
-      magenta: '0x945e80'
-      cyan:    '0x4c7a5d'
-      white:   '0xe6d5ae'
-# Apply the color scheme.
-colors: *gruvbox_material_medium_dark
-
 # Import additional configuration files
+import:
+  - rose-pine.yml
 #
 # Imports are loaded in order, skipping all missing files, with the importing
 # file being loaded last. If a field is already present in a previous import, it
@@ -260,50 +125,52 @@ window:
 # Font configuration
 font:
   # Normal (roman) font face
-  #normal:
+  normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    family: JetBrainsMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
-  #bold:
+  bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
-
+    family: JetBrainsMono Nerd Font
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
-  #italic:
+  italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
+    family: JetBrainsMono Nerd Font
+
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
-  #bold_italic:
+  bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
+    family: JetBrainsMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+    style: Bold Italic
 
   # Point size
   size: 14.0
@@ -438,11 +305,6 @@ live_config_reload: true
 
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
-shell:
-  program: /bin/fish
-  args: 
-    - --command=tmux
-# Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.

@@ -1,9 +1,5 @@
 #
 # ~/.bashrc
-#
-
-#doom emacs
-export PATH="$HOME/.emacs.d/bin:$PATH"
 
 #jogl
 export PATH="$HOME/projects/uni/autumn/com3503/code/jogl25/lib:$PATH"
@@ -95,18 +91,25 @@ _open_files_for_editing() {
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/cam/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/cam/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/cam/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
     else
-        export PATH="/home/cam/anaconda3/bin:$PATH"
+        export PATH="/usr/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
+
+#' Custom Alias
+alias com3503assignment="cd ~/projects/uni/autumn/com3503/opengl-assignment"
+alias runopengl="rm *.class;javac Aliens.java;java Aliens"
+alias sentiment_analysis="cd ~/projects/uni/autumn/com3110/assignments/sentiment_analysis"
 eval "$(starship init bash)"
-alias config='/usr/bin/git --git-dir=/home/cam/.cfg/ --work-tree=/home/cam'
